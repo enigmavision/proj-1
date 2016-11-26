@@ -230,7 +230,7 @@ function placeMarker(map, model, dataSource, positionLatLng, title, label) {
 		//animation: google.maps.Animation.DROP,
 
 		// This will be a nice feature once we have new-style Google map markers.
-		// With the retro markers we're using, the marker label ends up not 
+		// With the retro markers we're using, the marker label ends up not
 		// not centered (lands just below center point of circular area).
 		// This is a visual distraction, so I'm commenting this out for now.
 		//
@@ -244,7 +244,7 @@ function placeMarker(map, model, dataSource, positionLatLng, title, label) {
 
 		icon: model.getMarkerUrl(dataSource)
 	});
-	
+
 	marker.addListener('click', function() {
           infoWindow.open(map, marker);
     });
@@ -330,7 +330,7 @@ function loadMap(model) {
 
 	// Persist the map in the model so it can be easily referenced
 	// from callbacks (e.g., that reset the zoom level).
-	
+
 	model.setMap(map);
 
 	// Pass the map back to the caller.  It'll get used
@@ -449,5 +449,5 @@ function vMapCaption(str) {
 // Resets zoom level of map when 'reset zoom' button clicked.
 
 $(document).on("click", "#reset-button", function(){
-    location.reload(true);
+    model.resetZoom();
 });
